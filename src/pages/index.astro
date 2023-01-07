@@ -1,0 +1,49 @@
+---
+import content from "../content";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Pruthivi Thejan | Linktree">
+  <div id="app">
+    <img
+      src="https://avatars.githubusercontent.com/pruthivithejan"
+      class="avatar"
+      alt="Avatar"
+    />
+    <h1><span class="hi">Hi</span> I'm</h1>
+    <h1 class="name">Pruthivi Thejan</h1>
+    <h3>"I'll be myself or die trying."</h3>
+
+    <div class="card">
+      {
+        content.map((cardItem) => (
+          <a
+            href={cardItem.href}
+            type="button"
+            class={cardItem.class}
+            target="_blank"
+          >
+            <div class="title">
+              <i class={cardItem.icon} />
+              <h3>{cardItem.title}</h3>
+            </div>
+            {cardItem.description}
+          </a>
+        ))
+      }
+    </div>
+
+    <p class="popacity">
+      If I forgot to insert a link, the username <a href="#">@pruthivithejan</a>
+      will mostly lead you to any account I own on a social platform.
+    </p>
+
+    <p class="footer popacity">
+      Coded by Pruthivi Thejan <br />
+      Source code available at <a
+        target="_blank"
+        href="https://github.com/pruthivithejan/linktree">Github</a
+      >.
+    </p>
+  </div>
+</MainLayout>
